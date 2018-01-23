@@ -1,3 +1,54 @@
+/* https://github.com/mrmrs/colors */
+:root {
+    --navy: #001F3F;
+    --blue: #0074D9;
+    --aqua: #7FDBFF;
+    --teal: #39CCCC;
+    --olive: #3D9970;
+    --green: #2ECC40;
+    --lime: #01FF70;
+    --yellow: #FFDC00;
+    --orange: #FF851B;
+    --red: #FF4136;
+    --fuchsia: #F012BE;
+    --purple: #B10DC9;
+    --maroon: #85144B;
+    --white: #FFFFFF;
+    --silver: #DDDDDD;
+    --gray: #AAAAAA;
+    --black: #111111;
+    --wes-yellow: #FFC600;
+    --wes-black: #272727;
+    --badass: #BADA55;
+    --NAL-blue-light: #41B6E6;
+    --NAL-blue: #004C97;
+    --NAL-blue-dark: #002855;
+    --marlin-blue-light: #99D6EA;
+    --marlin-blue: #00B5E2;
+    --marlin-blue-dark: #0085AD;
+    --NAL-green-light: #78BE20;
+    --NAL-green: #4C8C2B;
+    --NAL-green-dark: #36573B;
+    --massey-ferguson-red-light: #AF272F;
+    --massey-ferguson-red: #8A2A2B;
+    --massey-ferguson-red-dark: #643335;
+    --NAL-orange-light: #F68D2E;
+    --NAL-orange: #CB6015;
+    --NAL-orange-dark: #B94700;
+    --parairie-gold-light: #F5E1A4;
+    --parairie-gold: #FED141;
+    --parairie-gold-dark: #EAAA00;
+    --NAL-gray-light: #A7A8AA;
+    --NAL-gray: #63666A;
+    --black-rich: #000000;
+    --primary-light: var(--NAL-blue-light);
+    --primary: var(--NAL-blue);
+    --primary-dark: var(--NAL-blue-dark);
+    --secondary-light: var(--marlin-blue-light);
+    --secondary: var(--marlin-blue);
+    --secondary-dark: var(--marlin-blue-dark);
+}
+
 /* Source Wes Bos gridcss.io */
 html {
     /* border-box box model allows us to add padding and border to our elements without increasing their size */
