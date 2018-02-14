@@ -47,28 +47,101 @@
     --secondary-light: var(--marlin-blue-light);
     --secondary: var(--marlin-blue);
     --secondary-dark: var(--marlin-blue-dark);
+    --good: var(--green);
+    --bad: var(--red);
 }
 
 /* Source Wes Bos gridcss.io */
 html {
-    /* border-box box model allows us to add padding and border to our elements without increasing their size */
-    box-sizing: border-box;
-    /* A system font stack so things load nice and quick! */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 900;
-    font-size: 10px;
-    color: var(--black);
-    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Auto Config Setup */
+main#auto {
+  min-width: 425px;
+}
+
+main#auto>section {
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #fff;
+  padding: 1rem;
+}
+
+main#auto>section>section>* {
+  border-radius: 2px;
+  text-align: center;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  display: grid;
+  align-content: center;
+}
+
+.description {
+  background: black;
+  color: cyan;
+}
+
+.reading {
+  background: greenyellow;
+  color: black;
+}
+
+.status {
+  background: var(--good);
+}
+
+.control {
+  background: red;
+  color: black;
+  width: 3rem;
+}
+
+.setting {
+  width: 6rem;
+}
+
+@supports (display: grid) {
+  main#auto {
+      display: grid;
+      grid-gap: 1rem;
+      width: auto;
   }
-  
-  /*
-    WAT IS THIS?!
-    We inherit box-sizing: border-box; from our <html> selector
-    Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
-  */
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+
+  main#auto>section {
+      --flow: row;
+      --rows: '';
+      --columns: repeat(auto-fit, minmax(260px, 1fr));
+      display: grid;
+      grid-gap: 0.5rem;
+      grid-template-columns: var(--columns);
+      grid-auto-flow: var(--flow);
+      grid-template-rows: var(--rows);
   }
+
+  main#auto>section>section {
+      display: grid;
+      grid-gap: 0.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+      grid-auto-flow: column;
+  }
+}
