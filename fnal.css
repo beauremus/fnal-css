@@ -113,11 +113,11 @@ main#auto>section>section>* {
 .control {
   background: red;
   color: black;
-  width: 3rem;
+  width: 5rem;
 }
 
 .setting {
-  width: 6rem;
+  width: 9rem;
 }
 
 @supports (display: grid) {
